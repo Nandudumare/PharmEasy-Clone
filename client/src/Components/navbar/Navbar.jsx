@@ -190,7 +190,7 @@ const Navbar = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://pharmeasylion.herokuapp.com/api/user/mail",
+        "https://pharmeasyapi.onrender.com/api/user/mail",
         {
           mail,
         }
@@ -215,7 +215,7 @@ const Navbar = () => {
       otp += otp1 + otp2 + otp3 + otp4;
       const user_id = localStorage.getItem("user_id");
       const res = await axios.post(
-        `https://pharmeasylion.herokuapp.com/api/user/verify/${user_id}`,
+        `https://pharmeasyapi.onrender.com/api/user/verify/${user_id}`,
         { otp: Number(otp) }
       );
       if (res.data === "your otp has been verified!") {

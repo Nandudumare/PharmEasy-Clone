@@ -24,7 +24,7 @@ const Product = () => {
   useEffect(() => {
     const getData = async () => {
       let res = await axios.get(
-        `https://pharmeasylion.herokuapp.com/api/product?q=${str}`
+        `https://pharmeasyapi.onrender.com/api/product?q=${str}`
       );
       setData(res.data);
     };

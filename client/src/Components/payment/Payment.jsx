@@ -20,8 +20,7 @@ function Payment() {
       order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyUrl =
-            "https://pharmeasylion.herokuapp.com/payment/verify";
+          const verifyUrl = "https://pharmeasyapi.onrender.com/payment/verify";
           const { data } = await axios.post(verifyUrl, response);
           console.log(data);
         } catch (error) {
@@ -48,7 +47,7 @@ function Payment() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "https://pharmeasylion.herokuapp.com/api/payment/orders";
+      const orderUrl = "https://pharmeasyapi.onrender.com/api/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: value.total });
       console.log(data);
       initPayment(data.data);
